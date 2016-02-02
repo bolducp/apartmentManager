@@ -1,0 +1,19 @@
+{
+  "name": "aptmanager",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Paige Bolduc <paigebolduc@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ]
+}
