@@ -6,12 +6,13 @@ var Tenant = require("../models/tenant.js");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+
 });
 
 
 router.get('/all', function(req, res, next){
   Apartment.find({}, function(err, apartments){
+    if(!apartments) return res.render('addApartment', {});
     res.render('apartments', {apartments: apartments});
   });
 });

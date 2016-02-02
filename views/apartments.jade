@@ -1,6 +1,26 @@
 extends layout
 
 block content
+  div.row
+    h2 Add New Apartment:
+    form.form-group
+      div.row
+        div.col-xs-6
+          label Apartment Number:
+          input.form-control#aptNum(type='number', placeholder="Apt Num", required)
+        div.col-xs-6
+          label Rent per Room:
+          input.form-control#rent(type='number', placeholder="Rent per room", required)
+      div.row
+        div.col-xs-6
+          label Number of Rooms:
+          input.form-control#numRooms(type='number', placeholder="Number of Rooms", required)
+        div.col-xs-6
+          label Photo Url:
+          input.form-control#photoUrl(type='text', placeholder="photo url", required)
+      
+    br
+    input#submit.btn.btn-info 
   table.table.table-hover
     thead
       tr: th Apartment #
@@ -17,4 +37,5 @@ block content
           td 
             img.icon(src=apartment.photoUrl)
           td #{apartment.tenants}
-          
+block scripts
+  script(src="/js/apartments.js")

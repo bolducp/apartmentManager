@@ -13,16 +13,6 @@ var apartmentSchema = new mongoose.Schema({
   tenants: [{type: mongoose.Schema.Types.ObjectId, ref: "Tenant"}]
 });
 
-apartmentSchema.statics.create = function(apartmentObj, callback){
-  var apartment = new Apartment(apartmentObj);
-  apartment.save(callback)
-}
-
-apartmentSchema.statics.showAll = function(req, callback){
-  Apartment.find({}).exec(callback);
-}
-
-
 Apartment = mongoose.model('apartment', apartmentSchema);
 
 module.exports = Apartment;

@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/all', function(req, res, next){
   Tenant.showAll(req, function(err, people){
+    if(!people) return res.render('addTenant');
     if (err) return res.status(400).send(err);
     res.render("tenants", {people: people});
   });
