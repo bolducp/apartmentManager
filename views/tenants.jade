@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  div.row
+    h2 Add New Tenant
+    form#newTenant.form-group
+      div.row
+        div.col-xs-6
+          label First Name:
+          input.form-control#firstName(type='text', placeholder="First", required)
+        div.col-xs-6
+          label Last Name:
+          input.form-control#lastName(type='text', placeholder="Last", required)
+      div.row
+        div.col-xs-6
+          label Phone #:
+          input.form-control#phone(type='number', placeholder="0000000000", required)
+        div.col-xs-6
+          label Email #:
+          input.form-control#email(type='email', placeholder="example@email.com", required)
+      div.row
+        div.col-xs-12
+          label Date of Birth:
+          input.form-control#dob(type='text', placeholder="2016-10-10", required)
+      br
+      input#submit.btn.btn-info(type='submit', value='Submit')    
+      br
+      br
+      div.row
+        h2 Put tenant in Apartment:
+        form.form-group
+          div.row
+            div.col-xs-6
+              label Tenant ID:
+              input.form-control#id(type='text', placeholder="Tenant ID", required)
+            div.col-xs-6
+              label Apartment Number:
+              input.form-control#aptNum(type='text', placeholder="Apt Number", required)
+              br
+          input#addToApt.btn.btn-info(type='submit', value='Submit')  
+  br
+  h2 Tenant List               
+  table.table.table-hover
+    thead
+      tr: th Tenant name
+          th  ID
+          th Email
+          th Phone #
+          th Date of Birth
+        
+    tbody
+      each person in people
+        tr
+          td #{person.name}
+          td #{person._id}
+          td #{person.email}
+          td #{person.phone}
+          td #{person.dob}
+          
+block scripts
+  script(src="/js/tenants.js")

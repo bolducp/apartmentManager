@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  table.table.table-hover
+    thead
+      tr: th Apartment #
+          th Rent Per Person
+          th Number of Rooms
+          th Photo
+          th Tenants
+    tbody
+      each apartment in apartments
+        tr
+          td #{apartment.apartmentNumber}
+          td #{apartment.rentPerRoom}
+          td #{apartment.numRooms}
+          td 
+            img.icon(src=apartment.photoUrl)
+          td #{apartment.tenants}
+          
